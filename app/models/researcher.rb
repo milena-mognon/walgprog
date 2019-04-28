@@ -1,6 +1,6 @@
 class Researcher < ApplicationRecord
-
-  belongs_to :institution, class_name: 'Institution', foreign_key: :institution_affiliation, inverse_of: :researchers
+  belongs_to :institution, class_name: 'Institution', foreign_key: :institution_affiliation,
+                           inverse_of: :researchers
 
   mount_uploader :image, ProfileImageUploader
 
@@ -10,6 +10,4 @@ class Researcher < ApplicationRecord
   validates :institution_affiliation, presence: true
   validates :genre, presence: true
   validates :image, presence: true
-
-
 end

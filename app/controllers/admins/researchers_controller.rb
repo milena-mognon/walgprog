@@ -60,12 +60,12 @@ class Admins::ResearchersController < ApplicationController
 
   def researcher_params
     params.require(:researcher).permit(
-        :name,
-        :title,
-        :academic_title,
-        :genre,
-        :institution_affiliation,
-        :image, :image_cache
+      :name,
+      :title,
+      :academic_title,
+      :genre,
+      :institution_affiliation,
+      :image, :image_cache
     )
   end
 end
