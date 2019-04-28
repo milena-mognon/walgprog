@@ -7,6 +7,9 @@ pt-BR:
       admin:
         one: Administrador
         other: Administradores
+      researcher:
+        one: Pesquisador
+        other: Pesquisadores
     attributes:
       attribute_commons: &commons
         name: Nome
@@ -19,10 +22,22 @@ pt-BR:
         current_password: Senha atual
         password_confirmation: Confirmação de senha
         remember_me: Lembre-me
+      researcher:
+        name: Nome
+        title: Título
+        academic_title: Título Acadêmico
+        institution_affiliation: Afiliação Institucional
+        image: Imagem
+        genre: Gênero
         <<: *commons
   helpers:
     back: Voltar
     currently: Atualmente
+    search: Pesquisar
+    show: Visualizar
+    home: Página inicial
+    edit: Editar
+    delete: Apagar
     boolean:
       'true': Sim
       'false': Não
@@ -65,3 +80,12 @@ pt-BR:
     select:
       m: Selecione um %{name}
       f: Selecione uma %{name}
+  researchers:
+    index: Pesquisadores
+    new: Novo Pesquisador
+    show: Visualizar
+    edit: Editar Pesquisador
+    success:
+      new: Novo pesquisador cadastrado com sucesso!
+      edit: Pesquisador editado com sucesso!
+      destroy: Pesquisador apagado com sucesso!

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_10_141936) do
+ActiveRecord::Schema.define(version: 2019_04_28_152556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,19 @@ ActiveRecord::Schema.define(version: 2019_04_10_141936) do
     t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "name"
+    t.string "initials"
+    t.string "color"
+    t.datetime "beginning_date"
+    t.datetime "end_date"
+    t.string "local"
+    t.integer "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "address"
+  end
+
   create_table "institutions", force: :cascade do |t|
     t.string "name"
     t.string "acronym"
@@ -48,6 +61,17 @@ ActiveRecord::Schema.define(version: 2019_04_10_141936) do
 
   create_table "regions", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "researchers", force: :cascade do |t|
+    t.string "name"
+    t.string "title"
+    t.string "academic_title"
+    t.string "genre"
+    t.string "institution_affiliation"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
