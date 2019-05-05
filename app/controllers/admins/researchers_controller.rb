@@ -7,6 +7,9 @@ class Admins::ResearchersController < ApplicationController
     researchers_path
   end
 
+  before_action :find_institutions, only: [:new, :create, :edit]
+  before_action :find_researcher, only: [:show, :edit, :update, :destroy]
+
   public
 
   def index
@@ -15,7 +18,6 @@ class Admins::ResearchersController < ApplicationController
 
   def new
     @researcher = Researcher.new
-    @institutions = Institution.all.order(:name)
   end
 
   def create
@@ -24,21 +26,15 @@ class Admins::ResearchersController < ApplicationController
       flash[:success] = t('researchers.success.new')
       redirect_to admins_researchers_path
     else
-      @institutions = Institution.all.order(:name)
       render 'new'
     end
   end
 
-  def show
-    @researcher = Researcher.find(params[:id])
-  end
+  def show; end
 
-  def edit
-    @researcher = Researcher.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @researcher = Researcher.find(params[:id])
     if @researcher.update researcher_params
       flash[:success] = t('researchers.success.edit')
       redirect_to admins_researchers_path
@@ -48,11 +44,8 @@ class Admins::ResearchersController < ApplicationController
   end
 
   def destroy
-    @researcher = Researcher.find(params[:id])
     @researcher.destroy if @researcher.present?
-
     flash[:success] = t('researchers.success.destroy')
-
     redirect_to admins_researchers_path
   end
 
@@ -67,5 +60,13 @@ class Admins::ResearchersController < ApplicationController
       :institution_affiliation,
       :image, :image_cache
     )
+  end
+
+  def find_institutions
+    @institutions = Institution.all.order(:name)
+  end
+
+  def find_researcher
+    @researcher = Researcher.find(params[:id])
   end
 end

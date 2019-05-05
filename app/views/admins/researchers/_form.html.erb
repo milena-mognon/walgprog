@@ -6,14 +6,10 @@
     <div class="col-sm-8">
       <%= f.input :name, required: true, autofocus: true %>
       <%= f.input :title, required: true %>
-      <%= f.input :academic_title%>
+      <%= f.input :academic_title %>
+      <%= f.input :genre, as: :radio_buttons, collection: [['Feminino', 'Feminino'], ['Masculino', 'Masculino']] %>
 
-
-
-      <%= f.input :genre, as: :radio_buttons, collection: [['Feminino','Feminino'], ['Masculino','Masculino']]%>
-
-
-      <%= f.association :institution, required: true, prompt: t('prompt.select.f'), input_html: { name: 'researcher[institution_affiliation]'} %>
+      <%= f.association :institution, collection: @institutions, required: true, prompt: t('prompt.select.f', name: t('activerecord.attributes.attribute_commons.institution')), input_html: { name: 'researcher[institution_affiliation]' } %>
     </div>
 
     <div class="col-4">
@@ -22,7 +18,7 @@
         <div class="input-field image_preview">
           <div class="box-image center">
             <%= image_tag @researcher.image.url, class: 'file_preview active' %>
-            <%= f.input :image, required: true, label: false, input_html: { accept: 'image/*' } %>
+            <%= f.input :image, required: true, label: false, input_html: {accept: 'image/*'} %>
             <%= f.hidden_field :image_cache %>
           </div>
         </div>

@@ -1,47 +1,47 @@
 <% provide(:head_title, t("researchers.show")) %>
 <% provide(:page_title, t("researchers.show")) %>
 <% provide(:title, t("researchers.show")) %>
-<div class="col-md-12 card-body">
 
-  <div class="form-row">
-    <div class="col-sm-8">
-      <label><%= t('activerecord.attributes.attribute_commons.name') %></label>
-      <br>
-      <input class="form-control" type="text" value="<%= @researcher.name %>" disabled="true">
-      <br>
-      <label><%= t('activerecord.attributes.researcher.title') %></label>
-      <br>
-      <input class="form-control" type="text" value="<%= @researcher.title %>" disabled="true">
-      <br>
-      <label><%= t('activerecord.attributes.researcher.academic_title') %></label>
-      <input class="form-control" type="text" value="<%= @researcher.academic_title %>" disabled="true">
-      <br>
-      <label><%= t('activerecord.attributes.researcher.genre') %></label>
-      <input class="form-control" type="text" value="<%= @researcher.genre %>" disabled="true">
-      <br>
-      <label><%= t('activerecord.attributes.researcher.institution_affiliation') %></label>
-      <br>
-      <input class="form-control" type="text" value="<%= @researcher.institution.name %>" disabled="true">
-      <br>
-    </div>
+<div class="form-row">
+  <div class="col-sm-8">
+    <label><%= t('activerecord.attributes.attribute_commons.name') %></label>
+    <br>
+    <input class="form-control" type="text" value="<%= @researcher.name %>" disabled="true">
+    <br>
+    <label><%= t('activerecord.attributes.researcher.title') %></label>
+    <br>
+    <input class="form-control" type="text" value="<%= @researcher.title %>" disabled="true">
+    <br>
+    <label><%= t('activerecord.attributes.researcher.academic_title') %></label>
+    <input class="form-control" type="text" value="<%= @researcher.academic_title %>" disabled="true">
+    <br>
+    <label><%= t('activerecord.attributes.researcher.genre') %></label>
+    <input class="form-control" type="text" value="<%= @researcher.genre %>" disabled="true">
+    <br>
+    <label><%= t('activerecord.attributes.researcher.institution_affiliation') %></label>
+    <br>
+    <input class="form-control" type="text" value="<%= @researcher.institution.name %>" disabled="true">
+    <br>
+  </div>
 
-    <div class="col-4">
+  <div class="col-4">
 
-      <div id="box-image-preview" data-toggle="tooltip" data-placement="left" title="Clique na imagem para alterá-la">
-        <div class="input-field image_preview">
-          <div class="box-image center">
-            <img src="<%= @researcher.image %>">
-          </div>
+    <div id="box-image-preview" data-toggle="tooltip" data-placement="left" title="Clique na imagem para alterá-la">
+      <div class="input-field image_preview">
+        <div class="box-image center">
+          <img src="<%= @researcher.image %>">
         </div>
       </div>
     </div>
-    <%= link_to admins_researchers_path, class: 'btn btn-secondary float-left', active: :exclusive do %>
-      <%= t('helpers.back') %>
-    <% end %>
-
-    <%= link_to edit_admins_researcher_path(@researcher.id), class: 'btn btn-primary float-right', active: :exclusive do %>
-      <i class="fa fa-edit"></i>
-      <%= t('helpers.edit') %>
-    <% end %>
   </div>
+</div>
+<div class="d-flex">
+  <%= link_to admins_researchers_path, class: 'btn btn-secondary float-left', active: :exclusive do %>
+    <%= t('helpers.back') %>
+  <% end %>
+
+  <%= link_to edit_admins_researcher_path(@researcher), class: 'btn btn-primary ml-auto', active: :exclusive do %>
+    <%= icon('fas', 'edit') %>
+    <%= t('helpers.edit') %>
+  <% end %>
 </div>

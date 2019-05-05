@@ -16,6 +16,7 @@ pt-BR:
         email: Email
         created_at: Criado em
         updated_at: Atualizado em
+        institution: Instituição de Ensino
       admin:
         image: Imagem
         password: Senha
@@ -86,6 +87,6 @@ pt-BR:
     show: Visualizar
     edit: Editar Pesquisador
     success:
-      new: Novo pesquisador cadastrado com sucesso!
-      edit: Pesquisador editado com sucesso!
-      destroy: Pesquisador apagado com sucesso!
+      new: Novo pesquisador criado com sucesso!
+      edit: Pesquisador atualizado com sucesso!
+      destroy: Pesquisador removido com sucesso!

@@ -35,46 +35,12 @@
       <th colspan="2"><%= t('activerecord.attributes.attribute_commons.name') %></th>
       <th><%= t('activerecord.attributes.researcher.title') %></th>
       <th><%= t('activerecord.attributes.researcher.academic_title') %></th>
-      <th><%= t('activerecord.attributes.researcher.institution_affiliation') %></th>
+      <th><%= t('activerecord.attributes.researcher.institution') %></th>
       <th colspan="3"></th>
     </tr>
     </thead>
     <tbody>
-    <% @researchers.each do |r| -%>
-      <tr>
-        <td><%= r.name %> </td>
-        <td></td>
-        <td><%= r.title %></td>
-        <td><%= r.academic_title %></td>
-        <td><%= r.institution.name %></td>
-        <td>
-          <div class="btn-group">
-            <%= link_to admins_researcher_path(r.id), class: 'icon ml-2', active: :exclusive do %>
-              <i
-                data-toggle="tooltip"
-                title="<%= t('helpers.show') %>"
-                class="fas fa-search"></i>
-            <% end %>
-            <%= link_to edit_admins_researcher_path(r.id), class: 'icon ml-2', active: :exclusive do %>
-              <i
-                data-toggle="tooltip"
-                title="<%= t('helpers.edit') %>"
-                class="fas fa-edit"></i>
-            <% end %>
-            <%= link_to admins_researcher_path(r.id),
-                        method: :delete,
-                        data: { confirm: t('prompt.confirm') },
-                        class: 'icon text-danger ml-2 destroy',
-                        active: :exclusive do %>
-              <i
-                data-toggle="tooltip"
-                title="<%= t('helpers.delete') %>"
-                class="fa fa-trash"></i>
-            <% end %>
-          </div>
-        </td>
-      </tr>
-    <% end -%>
+    <%= render @researchers %>
     </tbody>
   </table>
 </div>

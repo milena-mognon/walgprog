@@ -6,8 +6,6 @@ class CreateResearchers < ActiveRecord::Migration[5.2]
       t.string :academic_title
       t.string :genre
       t.integer :institution_affiliation, foreign_key: true
-
-      # t.string :institution_affiliation
       t.string :image
       t.timestamps
     end

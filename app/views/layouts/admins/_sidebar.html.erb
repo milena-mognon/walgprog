@@ -9,11 +9,11 @@
     <hr class="d-lg-none"/>
 
     <%= link_to admins_root_path, class: 'list-group-item list-group-item-action', active: :exclusive do %>
-      <span class="icon mr-3"><i class="fas fa-home"></i></span>Página inicial
+      <span class="icon mr-3"><%= icon('fas', 'home') %></span>Página inicial
     <% end %>
 
     <%= link_to admins_researchers_path, class: 'list-group-item list-group-item-action', active: :exclusive do %>
-      <span class="icon mr-3"><i class="fas fa-home"></i></span>Pesquisadores
+      <span class="icon mr-3"><%= icon('fas', 'graduation-cap') %></i></span>Pesquisadores
     <% end %>
   </div>
 </div>
