@@ -1,4 +1,6 @@
 class Admins::ContactsController < Admins::BaseController
+  breadcrumb 'contacts.index', :admins_contacts_path, only: [:new, :create]
+
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
