@@ -42,6 +42,13 @@ pt-BR:
     boolean:
       'true': Sim
       'false': Não
+  breadcrumbs:
+    homepage: 'Página Inicial'
+    researchers:
+      name: 'Pesquisadores'
+      new: 'Novo Pesquisador'
+      edit: 'Editar Pesquisador'
+      show: 'Visualizar Pesquisador'
   flash:
     actions:
       update:

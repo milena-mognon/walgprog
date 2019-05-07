@@ -1,13 +1,22 @@
 class Admins::ResearchersController < ApplicationController
   layout 'layouts/admins/application'
 
+  add_breadcrumb I18n.t('breadcrumbs.homepage'), :admins_root_path
+  add_breadcrumb I18n.t('breadcrumbs.researchers.name'), :admins_researchers_path
+  add_breadcrumb I18n.t('breadcrumbs.researchers.new'),
+                 :new_admins_researcher_path, only: [:new, :create]
+  add_breadcrumb I18n.t('breadcrumbs.researchers.edit'),
+                 :edit_admins_researcher_path, only: [:edit, :update]
+  add_breadcrumb I18n.t('breadcrumbs.researchers.show'),
+                 :admins_researcher_path, only: [:show]
+
   protected
 
   def after_update_path_for(*)
     researchers_path
   end
 
-  before_action :find_institutions, only: [:new, :create, :edit]
+  before_action :find_institutions, only: [:new, :create, :edit, :update]
   before_action :find_researcher, only: [:show, :edit, :update, :destroy]
 
   public
