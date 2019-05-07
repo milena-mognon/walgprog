@@ -1,5 +1,5 @@
 class Admins::ContactsController < Admins::BaseController
-  breadcrumb 'contacts.index', :admins_contacts_path, only: [:new, :create]
+   breadcrumb 'contacts.index', :admins_contacts_path, only: [:new, :create], match: :exact
 
   before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
@@ -8,10 +8,12 @@ class Admins::ContactsController < Admins::BaseController
   end
 
   def new
+    breadcrumb 'contacts.new', :new_admins_contact_path, match: :exact
     @contact = Contact.new
   end
 
   def create
+    breadcrumb 'contacts.new', :new_admins_contact_path, match:
     @contact = Contact.new(params_contact)
     action_success? @contact.save, :new, 'flash.actions.create.m'
   end
