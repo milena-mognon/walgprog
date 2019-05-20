@@ -5,11 +5,10 @@
   <div class="form-row">
     <div class="col-sm-8">
       <%= f.input :name, required: true, autofocus: true %>
-      <%= f.input :title, required: true %>
       <%= f.input :academic_title %>
       <%= f.input :genre, as: :radio_buttons, collection: [['Feminino', 'Feminino'], ['Masculino', 'Masculino']] %>
 
-      <%= f.association :institution, collection: @institutions, required: true, prompt: t('prompt.select.f', name: t('activerecord.attributes.attribute_commons.institution')), input_html: { name: 'researcher[institution_affiliation]' } %>
+      <%= f.input :institution_affiliation, collection: @institutions, required: true, prompt: t('prompt.select.f', name: t('activerecord.attributes.attribute_commons.institution')) %>
     </div>
 
     <div class="col-4">

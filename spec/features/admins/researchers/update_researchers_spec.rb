@@ -55,8 +55,8 @@ describe 'Researcher:update', type: :feature do
       expect(page).to have_message(message_blank_error, in: 'div.researcher_title')
       expect(page).to have_message(message_blank_error, in: 'div.researcher_academic_title')
       expect(page).to have_message(message_blank_error, in: 'div.researcher_image')
-      expect(page).to have_message(message_blank_error, in: 'div.researcher_institution_affiliation')
-
+      expect(page).to have_message(message_blank_error,
+                                   in: 'div.researcher_institution_affiliation')
       error_default_message = I18n.t('simple_form.error_notification.default_message')
       expect(page).to have_flash(:danger, text: error_default_message)
     end

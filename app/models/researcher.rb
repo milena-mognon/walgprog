@@ -5,7 +5,6 @@ class Researcher < ApplicationRecord
   mount_uploader :image, ProfileImageUploader
 
   validates :name, presence: true
-  validates :title, presence: true
   validates :academic_title, presence: true
   validates :institution_affiliation, presence: true
   validates :genre, presence: true

@@ -1,19 +1,11 @@
-class Admins::ResearchersController < ApplicationController
-  layout 'layouts/admins/application'
+class Admins::ResearchersController < Admins::BaseController
 
-  protected
-
-  def after_update_path_for(*)
-    researchers_path
-  end
-
+  before_action :set_resource_name, only: [:create, :update, :destroy]
   before_action :find_institutions, only: [:new, :create, :edit]
-  before_action :find_researcher, only: [:show, :edit, :update, :destroy]
-
-  public
+  before_action :find_researcher, except: [:new, :create, :index]
 
   def index
-    @researchers = Researcher.all.order(:name)
+    @researchers = Researcher.includes(:institution).order(:name)
   end
 
   def new
@@ -23,7 +15,7 @@ class Admins::ResearchersController < ApplicationController
   def create
     @researcher = Researcher.new(researcher_params)
     if @researcher.save
-      flash[:success] = t('researchers.success.new')
+      flash[:success] = t('flash.actions.create.m', resource_name: @resource_name)
       redirect_to admins_researchers_path
     else
       render 'new'
@@ -36,7 +28,7 @@ class Admins::ResearchersController < ApplicationController
 
   def update
     if @researcher.update researcher_params
-      flash[:success] = t('researchers.success.edit')
+      flash[:success] = t('flash.actions.update.m', resource_name: @resource_name)
       redirect_to admins_researchers_path
     else
       render 'edit'
@@ -45,7 +37,7 @@ class Admins::ResearchersController < ApplicationController
 
   def destroy
     @researcher.destroy if @researcher.present?
-    flash[:success] = t('researchers.success.destroy')
+    flash[:success] = t('flash.actions.destroy.m', resource_name: @resource_name)
     redirect_to admins_researchers_path
   end
 
@@ -53,13 +45,16 @@ class Admins::ResearchersController < ApplicationController
 
   def researcher_params
     params.require(:researcher).permit(
-      :name,
-      :title,
-      :academic_title,
-      :genre,
-      :institution_affiliation,
-      :image, :image_cache
+        :name,
+        :academic_title,
+        :genre,
+        :institution_affiliation,
+        :image, :image_cache
     )
+  end
+
+  def set_resource_name
+    @resource_name = Researcher.model_name.human
   end
 
   def find_institutions

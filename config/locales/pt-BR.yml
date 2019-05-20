@@ -86,7 +86,3 @@ pt-BR:
     new: Novo Pesquisador
     show: Visualizar
     edit: Editar Pesquisador
-    success:
-      new: Novo pesquisador criado com sucesso!
-      edit: Pesquisador atualizado com sucesso!
-      destroy: Pesquisador removido com sucesso!

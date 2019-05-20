@@ -18,6 +18,5 @@ describe 'Researchers:show', type: :feature do
     expect(page).to have_css("input[value=#{researcher.genre}]")
     expect(page).to have_link(href: edit_admins_researcher_path(researcher))
     expect(page).to have_link(href: admins_researchers_path)
-
   end
 end

@@ -71,7 +71,6 @@ pt-BR:
         are_you_sure: Você tem certeza?
         cancel_my_account: Cancelar minha conta
         currently_waiting_confirmation_for_email: 'No momento esperando por: %{email}'
-        leave_blank_if_you_don_t_want_to_change_it: deixe em branco caso não queira alterá-la
         title: Editar %{resource}
         unhappy: Não está contente?
         update: Atualizar
