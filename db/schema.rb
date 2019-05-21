@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_152556) do
+ActiveRecord::Schema.define(version: 2019_05_21_031936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,19 +37,6 @@ ActiveRecord::Schema.define(version: 2019_04_28_152556) do
     t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
-  create_table "events", force: :cascade do |t|
-    t.string "name"
-    t.string "initials"
-    t.string "color"
-    t.datetime "beginning_date"
-    t.datetime "end_date"
-    t.string "local"
-    t.integer "city_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "address"
-  end
-
   create_table "institutions", force: :cascade do |t|
     t.string "name"
     t.string "acronym"
@@ -67,11 +54,19 @@ ActiveRecord::Schema.define(version: 2019_04_28_152556) do
 
   create_table "researchers", force: :cascade do |t|
     t.string "name"
-    t.string "title"
-    t.string "academic_title"
     t.string "genre"
-    t.string "institution_affiliation"
     t.string "image"
+    t.bigint "scholarity_id"
+    t.bigint "institution_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["institution_id"], name: "index_researchers_on_institution_id"
+    t.index ["scholarity_id"], name: "index_researchers_on_scholarity_id"
+  end
+
+  create_table "scholarities", force: :cascade do |t|
+    t.string "name"
+    t.string "abbr"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -87,5 +82,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_152556) do
 
   add_foreign_key "cities", "states"
   add_foreign_key "institutions", "cities"
+  add_foreign_key "researchers", "institutions"
+  add_foreign_key "researchers", "scholarities"
   add_foreign_key "states", "regions"
 end
