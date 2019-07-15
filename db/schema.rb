@@ -42,12 +42,11 @@ ActiveRecord::Schema.define(version: 2019_07_16_150417) do
     t.string "name"
     t.string "email"
     t.string "phone"
-    t.boolean "unregistered", default: false
-    t.string "unregister_token"
-    t.datetime "unregister_send_at"
-    t.string "update_token"
-    t.datetime "update_send_at"
     t.bigint "institution_id"
+    t.string "unregister_token"
+    t.string "update_data_token"
+    t.datetime "update_data_send_at"
+    t.boolean "unregistered", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "confirmation_token"
