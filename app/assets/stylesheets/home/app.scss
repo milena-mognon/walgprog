@@ -21,6 +21,18 @@
   text-decoration: line-through;
   color: rgba(0, 0, 0, 0.22);
 }
+
+.section h2, .section h3 {
+  text-align: center;
+}
+
+.section p {
+  text-align: justify;
+}
+
+.section li {
+  text-align: left;
+}
 /*************************************************************
  * LOGO
  **************************************************************/
@@ -160,6 +172,7 @@ body {
 #nav ul li a.active span:before {
   // color: rgba(248, 255, 5, 1);
   color: #F87829;
+
 }
 
 #path3911.st0 {

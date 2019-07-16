@@ -14,7 +14,7 @@
 /*************************************************************
 * Configurations
 **************************************************************/
-@import 'config/tabler';
+//@import 'config/tabler';
 @import 'config/logo';
 
 
@@ -27,6 +27,6 @@
 /*************************************************************
 * Apps stylesheets
 **************************************************************/
-@import 'html5up-template/html5up-template';
-@import 'home/app';
+@import 'html5up-template/main';
+@import 'home/app.scss';
 

@@ -11,6 +11,11 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+  <style>
+    #nav ul li a.active span::before {
+      color: <%= Event.current_color %>;
+    }
+  </style>
   <%= render 'application/favicon' %>
 </head>
 
