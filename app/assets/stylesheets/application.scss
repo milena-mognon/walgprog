@@ -9,7 +9,7 @@
 * Vendors stylesheets
 **************************************************************/
 @import 'selectize/selectize.min';
-
+@import 'html5up-template/main';
 
 /*************************************************************
 * Configurations
@@ -27,6 +27,5 @@
 /*************************************************************
 * Apps stylesheets
 **************************************************************/
-@import 'html5up-template/main';
-@import 'home/app.scss';
+@import 'home/app';
 

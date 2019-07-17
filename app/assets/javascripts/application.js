@@ -13,7 +13,10 @@
 
 // Vendors
 //--------------------
-
+//= require jquery.scrolly/jquery.scrolly.min.js
+//= require jquery.scrollzer/jquery.scrollzer.min.js
+//= require skel/skel.min.js
+//= require html5up-template/html5up-template.js
 
 // Config files
 //--------------------
@@ -23,10 +26,5 @@
 
 // App files
 //--------------------
-//= require jquery.scrolly/jquery.scrolly.min.js
-//= require jquery.scrollzer/jquery.scrollzer.min.js
-//= require skel/skel.min.js
-
-//= require html5up-template/html5up-template.js
 //= require home/util
 //= require home/menu
