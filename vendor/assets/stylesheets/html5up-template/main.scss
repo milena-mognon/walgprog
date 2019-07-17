@@ -668,6 +668,7 @@
 							text-align: center;
 							width: 1.25em;
 							line-height: 1.75em;
+							padding-top: 0.75em;
 						}
 					}
 
@@ -882,7 +883,8 @@
 								&:before {
 									left: 100%;
 									margin-left: -1.25em;
-									line-height: 3.2em;
+									padding-top: 0.75em;
+									line-height: 1.75em;
 								}
 							}
 						}

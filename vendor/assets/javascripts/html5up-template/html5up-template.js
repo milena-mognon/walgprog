@@ -26,20 +26,20 @@
 				$body.removeClass('is-loading');
 			});
 
-		// // CSS polyfills (IE<9).
-		// 	if (skel.vars.IEVersion < 9)
-		// 		$(':last-child').addClass('last-child');
-		//
-		// // Fix: Placeholder polyfill.
-		// 	$('form').placeholder();
-		//
-		// // Prioritize "important" elements on mobile.
-		// 	skel.on('+mobile -mobile', function() {
-		// 		$.prioritize(
-		// 			'.important\\28 mobile\\29',
-		// 			skel.breakpoint('mobile').active
-		// 		);
-		// 	});
+		// CSS polyfills (IE<9).
+			if (skel.vars.IEVersion < 9)
+				$(':last-child').addClass('last-child');
+
+		// Fix: Placeholder polyfill.
+			$('form').placeholder();
+
+		// Prioritize "important" elements on mobile.
+			skel.on('+mobile -mobile', function() {
+				$.prioritize(
+					'.important\\28 mobile\\29',
+					skel.breakpoint('mobile').active
+				);
+			});
 
 		// Scrolly links.
 			$('.scrolly').scrolly();
@@ -85,29 +85,6 @@
 				});
 
 				$.scrollzer(ids, { pad: 200, lastHack: true });
-
-		// Header (narrower + mobile).
-
-		// Toggle.
-		$(
-			'<div id="headerToggle">' +
-			'<a href="#header" class="toggle"></a>' +
-			'</div>'
-		)
-			.appendTo($body);
-
-		// Header.
-		$('#header')
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'left',
-				target: $body,
-				visibleClass: 'header-visible'
-			});
 	});
 
 })(jQuery);

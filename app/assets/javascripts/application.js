@@ -26,6 +26,7 @@
 //= require jquery.scrolly/jquery.scrolly.min.js
 //= require jquery.scrollzer/jquery.scrollzer.min.js
 //= require skel/skel.min.js
-//= require home/util
+
 //= require html5up-template/html5up-template.js
-//= require home/app
+//= require home/util
+//= require home/menu
