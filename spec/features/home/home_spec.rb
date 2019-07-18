@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'Sections:show', type: :feature do
-  let!(:event) { create(:event, :with_sections) }
+  let!(:event) { create(:event, :with_sections, beginning_date: Time.zone.now, end_date: Time.zone.now + 2.days) }
 
   before(:each) do
     visit root_path
@@ -11,8 +11,8 @@ describe 'Sections:show', type: :feature do
     it 'show' do
       event.sections.each_with_index do |section, i|
         expect(page).to have_content(section.title)
-        #expect(page).to have_content(section.content)
-        #expect(icon_class).to eq(section.icon)
+        #expect(page).to have_content(html(section.content))
+        #expect(icon_class).to eq(section.icon.sub(/fas|far|fab/, ''))
       end
     end
   end
